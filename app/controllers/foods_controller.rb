@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-# class FoodsController < ApplicationController
-class FoodsController < ProtectedController
+class FoodsController < ApplicationController
+# class FoodsController < ProtectedController
   before_action :set_food, only: %i[ show update destroy]
 
   # GET /foods
@@ -50,6 +50,6 @@ class FoodsController < ProtectedController
     @food = Food.find(params[:id])
   end
   def food_params
-    params.require(:food).permit(:name, :item, :user_id)
+    params.require(:food).permit(:name, :sugar, :user_id)
   end
 end
