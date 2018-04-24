@@ -1,0 +1,4 @@
+#!bin/bash
+
+curl --include --request GET "http://localhost:4741/foods/${ID}" \
+--header "Authorization: Token token=${TOKEN}"
