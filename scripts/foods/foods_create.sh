@@ -4,6 +4,6 @@ curl --include --request POST "http://localhost:4741/foods/" \
 --data '{
   "food": {
     "name": "'"${NAME}"'",
-    "item": "'"${ITEM}"'"
+    "item": "'"${SUGAR}"'"
   }
 }'
