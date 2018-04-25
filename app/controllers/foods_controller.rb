@@ -1,7 +1,8 @@
 # frozen_string_literal: true
-class FoodsController < ApplicationController
-# class FoodsController < ProtectedController
-  before_action :set_food, only: %i[ show update destroy]
+
+# class FoodsController < ApplicationController
+  class FoodsController < OpenReadController
+  before_action :set_food, only: %i[show update destroy]
 
   # GET /foods
   def index
@@ -12,7 +13,7 @@ class FoodsController < ApplicationController
 
   # GET /foods/1
   def show
-    render json: @food
+    render json: Food.find(params[:id])
   end
 
   # POST /foods
@@ -44,11 +45,11 @@ class FoodsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
 
-
   # Only allow a trusted parameter "white list" through.
   def set_food
-    @food = Food.find(params[:id])
+    @food = current_user.foods.find(params[:id])
   end
+
   def food_params
     params.require(:food).permit(:name, :sugar, :user_id)
   end

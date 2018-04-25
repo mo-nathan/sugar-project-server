@@ -6,6 +6,6 @@ curl --include --request PATCH "http://localhost:4741/foods/${ID}" \
 --data '{
   "food": {
     "name": "'"${NAME}"'",
-    "item": "'"${ITEM}"'"
+    "item": "'"${SUGAR}"'"
   }
 }'
