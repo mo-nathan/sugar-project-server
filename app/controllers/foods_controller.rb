@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # class FoodsController < ApplicationController
-  class FoodsController < OpenReadController
+  class FoodsController < ProtectedController
   before_action :set_food, only: %i[show update destroy]
 
   # GET /foods
