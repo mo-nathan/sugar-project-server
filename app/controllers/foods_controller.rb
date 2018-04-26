@@ -6,7 +6,7 @@
 
   # GET /foods
   def index
-    @foods = Food.all
+    @foods = current_user.foods.all
 
     render json: @foods
   end
